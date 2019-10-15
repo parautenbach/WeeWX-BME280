@@ -38,6 +38,7 @@ import weewx.drivers
 import smbus2
 import bme280
 
+# TODO: Tie up with installer
 DRIVER_NAME = "BME280"
 DRIVER_VERSION = "0.1.0"
 
@@ -83,10 +84,9 @@ class BME280Driver(weewx.drivers.AbstractDevice):
                 # https://github.com/weewx/weewx/blob/master/bin/weewx/units.py
                 packet = {"dateTime": int(time.time()),
                           "usUnits": weewx.METRIC}
-                # use?
+                # TODO: Use these fields?
                 # print(data.id)
                 # print(data.timestamp)
-                # cast?
                 packet["outTemp"] = float(data.temperature)
                 packet["pressure"] = float(data.pressure)
                 packet["outHumidity"] = float(data.humidity)
@@ -106,6 +106,8 @@ class BME280Driver(weewx.drivers.AbstractDevice):
 #   PYTHONPATH=/home/weewx/bin python ./bme280.py
 if __name__ == "__main__":
     import weeutil.weeutil
+
     driver = BME280Driver()
+
     for packet in driver.genLoopPackets():
         print(weeutil.weeutil.timestamp_to_string(packet["dateTime"]), packet)
