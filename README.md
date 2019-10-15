@@ -11,7 +11,7 @@ This software supports the [BME280](https://www.bosch-sensortec.com/bst/products
 
 # Software Requirements
 
-- A WeeWX](http://www.weewx.com/) PWS server running on the host (e.g. a Raspberry Pi)
+- A [WeeWX](http://www.weewx.com/) PWS server running on the host (e.g. a Raspberry Pi)
 - The Python [RPi.BME280](https://pypi.org/project/RPi.bme280/) library to interface with the sensor
 
 # Driver Installation
