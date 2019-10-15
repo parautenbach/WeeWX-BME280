@@ -26,11 +26,13 @@ sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```
 
-# Driver Configuration
+To uninstall, just run `wee_extension --uninstall bme280wx`.
 
-Run `i2cdetect -y 1` (where `1` is the I2C port number) from a command line to get the I2C address.
+# Manual Driver Configuration
 
-Add the following to `weewx.conf`:
+Run `i2cdetect -y 1` (where `1` is the I2C port number) from a command line to get the I2C address of the BME280 sensor.
+
+Add the following to `/etc/weewx/weewx.conf`:
 
 ```ini
 [Station]
