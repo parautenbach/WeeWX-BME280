@@ -67,8 +67,8 @@ class BME280Driver(weewx.drivers.AbstractDevice):
         # default is 0x76; specified in base 16 (hex)
         self._i2c_address = int(station_dict.get("i2c_address", 0x76), 16)
 
-        log_info("Polling interval: {:.2f}}".format(self._poll_interval))
-        log_info("I2C port: {}}".format(self._i2c_port))
+        log_info("Polling interval: {:.2f}".format(self._poll_interval))
+        log_info("I2C port: {}".format(self._i2c_port))
         log_info("I2C address: {:0#x}".format(self._i2c_address))
 
         self._bus = smbus2.SMBus(port)
