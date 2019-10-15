@@ -39,7 +39,7 @@ import smbus2
 import bme280
 
 # TODO: Tie up with installer
-DRIVER_NAME = "BME280"
+DRIVER_NAME = "BME280WX"
 DRIVER_VERSION = "0.1.0"
 
 
@@ -53,10 +53,10 @@ def log_error(message):
     logmsg(syslog.LOG_ERR, message)
 
 def loader(config_dict, engine):
-    return BME280Driver(**config_dict[DRIVER_NAME])
+    return BME280WXDriver(**config_dict[DRIVER_NAME])
 
 
-class BME280Driver(weewx.drivers.AbstractDevice):
+class BME280WXDriver(weewx.drivers.AbstractDevice):
     """A WeeWX driver that reads data from a BME280 sensor attached to a Raspberry Pi."""
 
     def __init__(self, **station_dict):
@@ -103,11 +103,11 @@ class BME280Driver(weewx.drivers.AbstractDevice):
         return DRIVER_NAME
 
 # To test this driver, run it directly as follows:
-#   PYTHONPATH=/home/weewx/bin python ./bme280.py
+#   PYTHONPATH=/home/weewx/bin python ./bme280wx.py
 if __name__ == "__main__":
     import weeutil.weeutil
 
-    driver = BME280Driver()
+    driver = BME280WXDriver()
 
     for packet in driver.genLoopPackets():
         print(weeutil.weeutil.timestamp_to_string(packet["dateTime"]), packet)
