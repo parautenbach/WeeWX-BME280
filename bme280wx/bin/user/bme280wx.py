@@ -43,14 +43,17 @@ DRIVER_NAME = "BME280WX"
 DRIVER_VERSION = "0.1.0"
 
 
+def _log_message(destination, message):
+    syslog.syslog(destination, "bme280wx: {}".format(message))
+
 def log_debug(message):
-    logmsg(syslog.LOG_DEBUG, message)
+    _log_message(syslog.LOG_DEBUG, message)
 
 def log_info(message):
-    logmsg(syslog.LOG_INFO, message)
+    _log_message(syslog.LOG_INFO, message)
 
 def log_error(message):
-    logmsg(syslog.LOG_ERR, message)
+    _log_message(syslog.LOG_ERR, message)
 
 def loader(config_dict, engine):
     return BME280WXDriver(**config_dict[DRIVER_NAME])
