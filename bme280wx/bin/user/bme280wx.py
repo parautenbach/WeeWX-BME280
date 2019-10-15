@@ -53,7 +53,7 @@ def log_error(message):
     logmsg(syslog.LOG_ERR, message)
 
 def loader(config_dict, engine):
-    return FileParseDriver(**config_dict[DRIVER_NAME])
+    return BME280Driver(**config_dict[DRIVER_NAME])
 
 
 class BME280Driver(weewx.drivers.AbstractDevice):
