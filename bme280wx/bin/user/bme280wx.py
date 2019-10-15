@@ -24,9 +24,9 @@
 # the following changes to weewx.conf:
 #
 # [Station]
-#     station_type = BME280
+#     station_type = BME280WX
 #
-# [BME280]
+# [BME280WX]
 #     poll_interval = 2          # number of seconds
 #     i2c_port = 1               # also the port number used in the comment below
 #     i2c_address = 0x76         # check this by running `i2cdetect -y 1` from a command-line (hex value)
@@ -65,7 +65,7 @@ class BME280WXDriver(weewx.drivers.AbstractDevice):
         # default is 1; specified in base 10
         self._i2c_port = int(station_dict.get("i2c_port", 1))
         # default is 0x76; specified in base 16 (hex)
-        self._i2c_address = int(station_dict.get("i2c_address", 0x76), 16)
+        self._i2c_address = int(station_dict.get("i2c_address", "0x76"), 16)
 
         log_info("Polling interval: {:.2f}".format(self._poll_interval))
         log_info("I2C port: {}".format(self._i2c_port))
@@ -102,8 +102,8 @@ class BME280WXDriver(weewx.drivers.AbstractDevice):
     def hardware_name(self):
         return DRIVER_NAME
 
-# To test this driver, run it directly as follows:
-#   PYTHONPATH=/home/weewx/bin python ./bme280wx.py
+# To test this driver, run it directly as follows (assuming a Raspberry Pi installation):
+#   PYTHONPATH=/usr/share/weewx/ python ./bme280wx.py
 if __name__ == "__main__":
     import weeutil.weeutil
 
