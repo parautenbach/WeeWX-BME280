@@ -2,7 +2,7 @@ from weecfg.extension import ExtensionInstaller
 
 
 def loader():
-    return BME280Driver()
+    return BME280DriverInstaller()
 
 
 class BME280DriverInstaller(ExtensionInstaller):

@@ -20,7 +20,7 @@ This software supports the [BME280](https://www.bosch-sensortec.com/bst/products
 
 Run the following commands:
 ```shell
-sudo wee_extension --install bme280wx.tar.gz
+sudo wee_extension --install bme280wx.zip
 sudo wee_config --reconfigure
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
