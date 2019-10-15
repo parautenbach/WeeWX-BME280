@@ -72,7 +72,7 @@ class BME280WXDriver(weewx.drivers.AbstractDevice):
 
         log_info("Polling interval: {:.2f}".format(self._poll_interval))
         log_info("I2C port: {}".format(self._i2c_port))
-        log_info("I2C address: {:0#x}".format(self._i2c_address))
+        log_info("I2C address: {:#x}".format(self._i2c_address))
 
         self._bus = smbus2.SMBus(port)
         self._calibration_params = bme280.load_calibration_params(self._bus, self._i2c_address)
