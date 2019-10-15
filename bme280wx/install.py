@@ -9,7 +9,7 @@ class BME280DriverInstaller(ExtensionInstaller):
     def __init__(self):
         super(BME280DriverInstaller, self).__init__(
             version="0.1.0",
-            name="bme280",
+            name="BME280",
             description="BME280 driver for WeeWX.",
             author="Pieter Rautenbach",
             author_email="parautenbach@gmail.com",
