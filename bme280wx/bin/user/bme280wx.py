@@ -25,6 +25,10 @@
 #
 # [Station]
 #     station_type = BME280WX
+#     location = "<neighbourhood>, <city>"
+#     latitude = <lat>
+#     longitude = <long>
+#     altitude = <value>, <unit>
 #
 # [BME280WX]
 #     poll_interval = 2          # number of seconds
