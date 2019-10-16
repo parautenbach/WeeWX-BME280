@@ -16,7 +16,7 @@ This software supports the [BME280](https://www.bosch-sensortec.com/bst/products
 
 # Driver Installation
 
-[Download](https://github.com/parautenbach/WeeWX-BME280/releases) the latest release. 
+Download the [latest release](https://github.com/parautenbach/WeeWX-BME280/releases/latest). 
 
 Run the following commands:
 ```shell
