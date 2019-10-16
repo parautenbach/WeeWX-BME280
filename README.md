@@ -26,7 +26,7 @@ sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 ```
 
-To uninstall, just run `wee_extension --uninstall bme280wx`.
+To uninstall, just run `wee_extension --uninstall BME280WX`.
 
 # Manual Driver Configuration
 
