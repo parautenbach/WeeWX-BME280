@@ -90,6 +90,7 @@ class BME280WXDriver(weewx.drivers.AbstractDevice):
                 # TODO: Use these fields?
                 # print(data.id)
                 # print(data.timestamp)
+                log_debug(data)
                 packet["outTemp"] = float(data.temperature)
                 packet["pressure"] = float(data.pressure)
                 packet["outHumidity"] = float(data.humidity)
