@@ -19,6 +19,7 @@
 
 # Software dependencies:
 #     o https://pypi.org/project/RPi.bme280/
+#     o https://pypi.org/project/smbus2/
 #
 # To use this driver, put this file in the weewx user directory, then make
 # the following changes to weewx.conf:
